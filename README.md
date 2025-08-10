@@ -15,6 +15,8 @@ This project is a Streamlit-based web application that serves as a personalized 
 
 The project is designed to run entirely locally, assuming Ollama is installed and running. It's ideal for researchers, students, or anyone needing a private AI assistant for document-based queries.
 
+<img width="1103" height="616" alt="Screenshot 2025-08-11 at 1 50 23 AM" src="https://github.com/user-attachments/assets/8e7e8cd6-7d4c-4727-b2a5-9c390c16ce76" />
+
 ## Prerequisites
 - **Python**: 3.10+ (tested with 3.12).
 - **Ollama**: Installed and running (download from [ollama.com](https://ollama.com)).
